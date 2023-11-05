@@ -6,13 +6,4 @@ export default {
         quantity:"Quantity Robot",
         trend:"Market Trend"
     },
-    market:{
-        title:"MARKET"
-    },
-    wallet:{
-        title:"WALLET"
-    },
-    mine:{
-        title:"MINE"
-    }
 }

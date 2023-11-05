@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
-import i18n from "@/lang/index.js"
+import i18n from "@/lang/index.js";
+import { useRouter } from "vue-router";
+
+const router = useRouter()
 
 const listData = ref([
   {
@@ -57,10 +60,17 @@ const showMenu = () => {
   showLeft.value = true;
 };
 
-const changeLang = (item) =>{
-  console.log(item.lang)
-  i18n.locale = item.lang
+const changeLang = (item) => {
+  i18n.locale = item.lang;
   showTop.value = false;
+};
+
+const login = () =>{
+  router.push("/login")
+}
+
+const register = () =>{
+  router.push("/register")
 }
 </script>
 
@@ -68,22 +78,32 @@ const changeLang = (item) =>{
   <div class="home">
     <div class="header">
       <span class="material-symbols-outlined" @click="showMenu"> menu </span>
-      <span>{{$t('home.title')}} </span>
+      <span>{{ $t("home.title") }} </span>
       <van-popup
         v-model:show="showTop"
         position="top"
         :style="{ height: '30%' }"
       >
         <div class="lang">
-          <div v-for="(item,index) in langData" :key="index" @click="changeLang(item)"><span>{{item.lang}}</span></div>
+          <div
+            v-for="(item, index) in langData"
+            :key="index"
+            @click="changeLang(item)"
+          >
+            <span>{{ item.lang }}</span>
+          </div>
         </div>
       </van-popup>
       <van-popup
         v-model:show="showLeft"
         position="left"
-        :style="{ width: '50%', height: '100%' }">
-        <div class="leftTab" style="color: black;">
-          1234
+        :style="{ width: '50%', height: '100%' }"
+      >
+        <div class="leftTab">
+          <div class="list">
+            <span @click="login">登录</span>
+            <span @click="register">注册</span>
+          </div>
         </div>
       </van-popup>
       <span class="material-symbols-outlined" @click="showLang">
@@ -202,6 +222,26 @@ const changeLang = (item) =>{
         text-align: center;
         padding: 10px 0px;
       }
+    }
+    .van-popup{
+      background: #131f30;
+    }
+    .leftTab{
+      padding: 40px 10px;
+      background: #131f30;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      .list{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        text-align: center;
+        span{
+          padding: 15px 0px;
+          color: #1E80FF;
+        }
+      }      
     }
   }
   .banner {
