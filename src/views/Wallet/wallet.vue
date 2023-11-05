@@ -40,11 +40,11 @@ const changeTab = (item) => {
       <div class="bottom">
         <div class="left">
           <span>今日收益</span>
-          <span>0</span>
+          <span style="color: #00adb5;font-weight: 600;">10</span>
         </div>
         <div class="right">
           <span>总收益</span>
-          <span>0</span>
+          <span style="color: #ff5722;font-weight: 600;">10</span>
         </div>
       </div>
     </div>
@@ -75,6 +75,7 @@ const changeTab = (item) => {
     flex-direction: column;
     background: #364f6b;
     border-radius: 5px;
+    margin: 10px 0px;
     .top {
       text-align: center;
       p {

@@ -73,6 +73,9 @@ const listData = ref([
       justify-content: space-around;
       flex-direction: column;
       align-items: center;
+      background: #364F6B;
+      padding: 15px 0px;
+      border-radius: 5px;
       span {
         padding-top: 15px;
       }

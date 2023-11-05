@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import i18n from "@/lang/index.js"
 
 const listData = ref([
   {
@@ -31,15 +32,63 @@ const listData = ref([
     up: 0,
   },
 ]);
+
+const langData = ref([
+  {
+    lang: "zh",
+  },
+  {
+    lang: "zh_hk",
+  },
+  {
+    lang: "en",
+  },
+]);
+
+const showTop = ref(false);
+
+const showLeft = ref(false);
+
+const showLang = () => {
+  showTop.value = true;
+};
+
+const showMenu = () => {
+  showLeft.value = true;
+};
+
+const changeLang = (item) =>{
+  console.log(item.lang)
+  i18n.locale = item.lang
+  showTop.value = false;
+}
 </script>
 
 <template>
   <div class="home">
     <div class="header">
-      <span class="material-symbols-outlined"> menu </span>
-      <span>首页
+      <span class="material-symbols-outlined" @click="showMenu"> menu </span>
+      <span>{{$t('home.title')}} </span>
+      <van-popup
+        v-model:show="showTop"
+        position="top"
+        :style="{ height: '30%' }"
+      >
+        <div class="lang">
+          <div v-for="(item,index) in langData" :key="index" @click="changeLang(item)"><span>{{item.lang}}</span></div>
+        </div>
+      </van-popup>
+      <van-popup
+        v-model:show="showLeft"
+        position="left"
+        :style="{ width: '50%', height: '100%' }">
+        <div class="leftTab" style="color: black;">
+          1234
+        </div>
+      </van-popup>
+      <span class="material-symbols-outlined" @click="showLang">
+        language
       </span>
-      <span class="material-symbols-outlined"> language </span>
     </div>
     <div class="banner">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
@@ -142,6 +191,18 @@ const listData = ref([
     font-weight: 600;
     display: flex;
     justify-content: space-between;
+    .lang {
+      width: auto;
+      height: 100%;
+      background: #131f30;
+      justify-content: space-around;
+      flex-direction: column;
+      padding: 20px 0px;
+      div {
+        text-align: center;
+        padding: 10px 0px;
+      }
+    }
   }
   .banner {
     width: auto;
