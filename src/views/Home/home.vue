@@ -37,7 +37,8 @@ const listData = ref([
   <div class="home">
     <div class="header">
       <span class="material-symbols-outlined"> menu </span>
-      <span>SCBFF</span>
+      <span>首页
+      </span>
       <span class="material-symbols-outlined"> language </span>
     </div>
     <div class="banner">

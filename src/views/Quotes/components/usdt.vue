@@ -54,6 +54,7 @@ const listData = ref([
     width: auto;
     height: 800px;
     padding-bottom: 20px;
+    font-weight: 600;
     .title{
         width: auto;
         display: flex;
