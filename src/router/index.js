@@ -39,7 +39,30 @@ const router = createRouter({
         },
         {
           path:"/wallet",
-          component:()=>import("@/views/Wallet/wallet.vue")
+          component:()=>import("@/views/Wallet/wallet.vue"),
+          children:[
+            {
+              path:"",
+              component:()=>import("@/views/Wallet/components/coins.vue")
+            },
+            {
+              path:"/coins",
+              component:()=>import("@/views/Wallet/components/coins.vue")
+            },
+            {
+              path:"/contract",
+              component:()=>import("@/views/Wallet/components/contract.vue")
+            },
+            {
+              path:"/fait",
+              component:()=>import("@/views/Wallet/components/fait.vue")
+            },
+            {
+              path:"/second",
+              component:()=>import("@/views/Wallet/components/second.vue"
+              )
+            }
+          ]
         }
       ])
     },
