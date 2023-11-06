@@ -91,6 +91,10 @@ const router = createRouter({
           component:()=>import("@/views/Order/components/sell.vue")
         }
       ]
+    },
+    {
+      path:"/record",
+      component:()=>import("@/views/Record/record.vue")
     }
   ]
 })

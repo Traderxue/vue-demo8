@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter()
 
 const listData = ref([
     {
@@ -8,6 +11,7 @@ const listData = ref([
     },
     {
         url:"http://127.0.0.1:5173/img_3.png",
+        path:"/record",
         title:"充值记录"
     },
     {
@@ -28,9 +32,13 @@ const listData = ref([
     },
     {
         url:"http://127.0.0.1:5173/img_8.png",
-        title:"切换用户"
+        title:"问题反馈"
     },
 ])
+
+const goTabs = (item) =>{
+  router.push(item.path)
+}
 </script>
 
 <template>
@@ -46,7 +54,7 @@ const listData = ref([
       </div>
     </div>
     <div class="box">
-      <div class="per" v-for="(item,index) in listData" :key="index">
+      <div class="per" v-for="(item,index) in listData" :key="index" @click="goTabs(item)">
         <div>
             <img :src="item.url" alt="">
             <span>{{item.title}}</span>

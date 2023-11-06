@@ -32,7 +32,7 @@ const changeTabs = (item)=>{
     <div class="header">
       <span class="material-symbols-outlined" @click="goBack"> arrow_back_ios </span>
       <span>委托单(USDT/CNY)</span>
-      <span>￥0.00</span>
+      <span></span>
     </div>
     <div class="nav">
         <span v-for="(item,index) in navData" :key="index" @click="changeTabs(item)" :class="active==item.title?'active':''">{{item.title}}</span>

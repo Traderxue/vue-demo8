@@ -22,7 +22,7 @@ const input2 = ref("")
                     <option value="wx">微信</option>
                 </select>
             </span></div>
-            <div><p>出售数量</p><span><input type="text" v-model="num" placeholder="0.000" disabled><span>USDT</span></span></div>
+            <div><p>购买数量</p><span><input type="text" v-model="num" placeholder="0.000" disabled><span>USDT</span></span></div>
             <div><p>备注</p><input type="text" v-model="input2" placeholder="无"></div>
         </div>
         <div class="btn">
