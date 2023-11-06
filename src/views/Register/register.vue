@@ -10,7 +10,7 @@ const login = () => {
 };
 
 const goBack =()=>{
-    router.back()
+    router.push("/home")
 }
 </script>
 

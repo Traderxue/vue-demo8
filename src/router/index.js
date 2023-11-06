@@ -73,6 +73,24 @@ const router = createRouter({
     {
       path:"/register",
       component:()=>import("@/views/Register/register.vue")
+    },
+    {
+      path:"/order",
+      component:()=>import("@/views/Order/order.vue"),
+      children:[
+        {
+          path:"",
+          component:()=>import("@/views/Order/components/buy.vue")
+        },
+        {
+          path:"/buy",
+          component:()=>import("@/views/Order/components/buy.vue")
+        },
+        {
+          path:"/sell",
+          component:()=>import("@/views/Order/components/sell.vue")
+        }
+      ]
     }
   ]
 })

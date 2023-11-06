@@ -53,6 +53,9 @@ const listData = ref([
         </div>
         <span class="material-symbols-outlined arrow"> arrow_forward_ios </span>
       </div>
+      <div class="btn">
+        <button>退出登录</button>
+      </div>
     </div>
   </div>
 </template>
@@ -112,6 +115,18 @@ const listData = ref([
         .arrow{
             font-size: 20px;
         }
+    }
+    .btn{
+      padding: 20px 0px;
+      text-align: center;
+      button{
+        width: 80%;
+        height: 35px;
+        border-radius:20px;
+        border: 0;
+        background: #00b8a9;
+        font-size: 14px;
+      }
     }
   }
 }

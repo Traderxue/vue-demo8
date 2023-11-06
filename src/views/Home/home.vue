@@ -72,6 +72,10 @@ const login = () =>{
 const register = () =>{
   router.push("/register")
 }
+
+const goOrder = ()=>{
+  router.push("/order")
+}
 </script>
 
 <template>
@@ -158,7 +162,7 @@ const register = () =>{
       </div>
     </div>
     <div class="quickly">
-      <div class="left">
+      <div class="left" @click="goOrder">
         <h3>快捷买币</h3>
         <span>支持USDT、BTC等</span>
       </div>
