@@ -7,12 +7,13 @@ const router = useRouter()
 const listData = ref([
     {
         url:"http://127.0.0.1:5173/img_2.png",
+        path:"/record",
         title:"回款明细"
     },
     {
         url:"http://127.0.0.1:5173/img_3.png",
-        path:"/record",
-        title:"充值记录"
+        path:"/invite",
+        title:"邀请好友"
     },
     {
         url:"http://127.0.0.1:5173/img_4.png",

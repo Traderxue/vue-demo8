@@ -95,6 +95,10 @@ const router = createRouter({
     {
       path:"/record",
       component:()=>import("@/views/Record/record.vue")
+    },
+    {
+      path:"/invite",
+      component:()=>import("@/views/Invite/invite.vue")
     }
   ]
 })
